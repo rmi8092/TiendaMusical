@@ -57,6 +57,7 @@ public class BloquearEscuchas extends JDialog {
 		contentPanel.setLayout(null);
 		
 		JTextPane txtpnAlCrearUn = new JTextPane();
+		txtpnAlCrearUn.setEditable(false);
 		txtpnAlCrearUn.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtpnAlCrearUn.setForeground(Color.BLACK);
 		txtpnAlCrearUn.setBackground(SystemColor.control);
@@ -98,7 +99,7 @@ public class BloquearEscuchas extends JDialog {
 	private void promocionarPremium() {
 		((Disco)Tienda.productoEncontrado).setDiscoEscuchable(false);
 		int eleccion = JOptionPane.showConfirmDialog(contenedor, "Ha agotado las tres escuchas gratuitas mensuales. Quiere pasar"
-				+ "a cliente Premium?.", "Cliente Premium?", JOptionPane.YES_NO_OPTION);
+				+ " a cliente Premium?.", "Cliente Premium?", JOptionPane.YES_NO_OPTION);
 		if(eleccion == JOptionPane.YES_OPTION){
 			((Disco)Tienda.productoEncontrado).comprarPremium();
 			try {

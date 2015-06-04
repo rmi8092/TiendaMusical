@@ -76,7 +76,6 @@ public class MostrarCarrito extends VentanaPadre {
 	 * M&eacute;todo que carga el primer producto del carrito del usuario seleccionado.
 	 */
 	protected void cargaInicial() {
-		//buscarProducto(Tienda.usuarioSeleccionado.getCarrito().get(0));
 		Tienda.productoEncontrado = Tienda.usuarioSeleccionado.getCarrito().get(0);
 		buscarYComprobarBotonera();
 	}

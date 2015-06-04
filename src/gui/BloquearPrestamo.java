@@ -46,6 +46,7 @@ public class BloquearPrestamo extends JDialog {
 		contentPanel.setLayout(null);
 		
 		JTextPane txtpnAlCrearUn = new JTextPane();
+		txtpnAlCrearUn.setEditable(false);
 		txtpnAlCrearUn.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtpnAlCrearUn.setForeground(Color.BLACK);
 		txtpnAlCrearUn.setBackground(SystemColor.control);

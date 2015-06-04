@@ -24,7 +24,7 @@ public class Usuario {
 	/**
 	 * Campo cliente premium
 	 */
-	static boolean clientePremium = false;
+	private boolean clientePremium = true;
 	/**
 	 * Campo carrito
 	 */
@@ -103,8 +103,8 @@ public class Usuario {
 	 * M&eacute;todo setter para asignar al usuario categor&iacute;a premium.
 	 * @param clientePremium Si el usuario es premium o no
 	 */
-	private void setClientePremium(boolean clientePremium) {
-		this.clientePremium = clientePremium;
+	public static void setClientePremium(boolean clientePremium) {
+		clientePremium = clientePremium;
 	}
 	
 	/**

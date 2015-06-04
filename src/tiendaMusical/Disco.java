@@ -182,7 +182,7 @@ public class Disco extends Producto implements esVendible {
 	 * M&eacute;todo que convierte al cliente en premium y le otorga escuchas ilimitadas.
 	 */
 	public void comprarPremium() {
-		Usuario.clientePremium = true;
+		Tienda.usuarioSeleccionado.setClientePremium(true);
 		setDiscoEscuchable(true);
 	}
 
@@ -193,7 +193,7 @@ public class Disco extends Producto implements esVendible {
 	public String calcularPrecio() {
 		String precio = "";
 		if (Tienda.usuarioSeleccionado.isClientePremium()) {
-			precio = Double.toString((Double.parseDouble(getPrecio()) * 0.8));
+			precio = Double.toString((Double.parseDouble(getPrecio()) * 0.5));
 			return precio;
 		} else {
 			precio = getPrecio();

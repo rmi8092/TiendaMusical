@@ -3,6 +3,8 @@
  */
 package tiendaMusical;
 
+import gui.Tienda;
+
 /**
  * Clase Merchandising
  */
@@ -39,11 +41,11 @@ public class Merchandising extends Producto implements esVendible{
 	@Override
 	public String calcularPrecio() {
 		String precio = "";
-		if (Usuario.clientePremium == false) {
-			precio = getPrecio();
+		if (Tienda.usuarioSeleccionado.isClientePremium()) {
+			precio = Double.toString((Double.parseDouble(getPrecio()) * 0.5));
 			return precio;
 		} else {
-			precio = Double.toString((Double.parseDouble(getPrecio()) * 0.8));
+			precio = getPrecio();
 			return precio;
 		}
 	}

@@ -83,30 +83,42 @@ public class AnnadirProducto extends VentanaPadre {
 		comboBoxSoporte.setModel(new DefaultComboBoxModel(
 				getSoporte(comboBoxCateg)));
 		if (comboBoxCateg.getSelectedItem() == Categoria.MUSICA) {
-			restablecerVentana();
 			campoDiasRestantes.setEnabled(false);
+			etiqDisponible.setEnabled(false);
+			etiqGenero.setEnabled(true);
 			comboBoxDisponible.setEnabled(false);
+			etiqNumeroCanciones.setEnabled(true);
+			campoNumeroCanciones.setEnabled(true);
+			comboBoxGenero.setEnabled(true);
+			campoAnno.setEnabled(true);
 			comboBoxGenero.setModel(new DefaultComboBoxModel(
 					getGenero(comboBoxCateg)));
 		}
 		if (comboBoxCateg.getSelectedItem() == Categoria.LIBRO) {
-			restablecerVentana();
+			etiqNumeroCanciones.setEnabled(false);
 			campoNumeroCanciones.setEnabled(false);
 			campoEscuchasRestantes.setEnabled(false);
-			etiqDisponible.setVisible(true);
-			comboBoxDisponible.setVisible(true);
+			etiqDisponible.setEnabled(true);
+			etiqGenero.setEnabled(true);
+			comboBoxDisponible.setEnabled(true);
+			campoAnno.setEnabled(true);
+			comboBoxGenero.setEnabled(true);
 			comboBoxGenero.setModel(new DefaultComboBoxModel(
 					getGenero(comboBoxCateg)));
 			comboBoxDisponible.setModel(new DefaultComboBoxModel(Disponible
 					.values()));
 		}
 		if (comboBoxCateg.getSelectedItem() == Categoria.MERCHANDISING) {
-			restablecerVentana();
+			etiqGenero.setEnabled(false);
 			comboBoxGenero.setEnabled(false);
 			campoDiasRestantes.setEnabled(false);
+			etiqDisponible.setEnabled(false);
 			comboBoxDisponible.setEnabled(false);
+			etiqNumeroCanciones.setEnabled(false);
 			campoNumeroCanciones.setEnabled(false);
 			campoEscuchasRestantes.setEnabled(false);
+			campoAnno.setEnabled(true);
+
 		}
 	}
 
@@ -114,8 +126,8 @@ public class AnnadirProducto extends VentanaPadre {
 	 * M&eacute;todo para configurar la ventana para a&nacute;adir productos.
 	 */
 	public void configurarVentana() {
-		comboBoxDisponible.setVisible(false);
-		etiqDisponible.setVisible(false);
+		comboBoxDisponible.setEnabled(false);
+		etiqDisponible.setVisible(true);
 		etiqEscuchasRestantes.setVisible(false);
 		campoEscuchasRestantes.setVisible(false);
 		etiqUsuario.setVisible(false);
@@ -125,20 +137,6 @@ public class AnnadirProducto extends VentanaPadre {
 		campoDiasRestantes.setVisible(false);
 		etiqDiasRestantes.setVisible(false);
 		campoDiasRestantes.setVisible(false);
-	}
-
-	/**
-	 * M&eacute;todo para restablecer todos los valores de visibilidad de
-	 * ventana a true.
-	 */
-	public void restablecerVentana() {
-		campoDiasRestantes.setEnabled(true);
-		comboBoxDisponible.setEnabled(true);
-		campoNumeroCanciones.setEnabled(true);
-		campoEscuchasRestantes.setEnabled(true);
-		comboBoxGenero.setEnabled(true);
-		campoAnno.setEnabled(true);
-
 	}
 
 	/**
