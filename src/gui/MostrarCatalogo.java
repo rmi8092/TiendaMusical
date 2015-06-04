@@ -31,6 +31,7 @@ public class MostrarCatalogo extends VentanaPadre {
 	 */
 	public MostrarCatalogo() {
 		super();
+		comboBoxDisponible.setEnabled(false);
 		botonAccionTienda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				carritoImpedir(Tienda.productoEncontrado);

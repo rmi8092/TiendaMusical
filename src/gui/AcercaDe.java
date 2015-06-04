@@ -33,7 +33,7 @@ public class AcercaDe extends JDialog {
 	public AcercaDe() {
 		setModal(true);
 		setTitle("Acerca De...");
-		setBounds(100, 100, 450, 325);
+		setBounds(100, 100, 517, 332);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -43,7 +43,7 @@ public class AcercaDe extends JDialog {
 			txtpnRafaelMirandaIbez.setFont(new Font("Verdana", Font.BOLD, 13));
 			txtpnRafaelMirandaIbez.setBackground(SystemColor.control);
 			txtpnRafaelMirandaIbez.setText("Autor: Rafael Miranda Ib\u00E1\u00F1ez.\r\n\u00C1mbito: Asignatura de Programaci\u00F3n de 1\u00BA de DAW.");
-			txtpnRafaelMirandaIbez.setBounds(10, 11, 414, 44);
+			txtpnRafaelMirandaIbez.setBounds(41, 11, 414, 44);
 			contentPanel.add(txtpnRafaelMirandaIbez);
 		}
 		{
@@ -51,16 +51,16 @@ public class AcercaDe extends JDialog {
 			txtpnVersionFecha.setFont(new Font("Verdana", Font.BOLD, 13));
 			txtpnVersionFecha.setBackground(SystemColor.control);
 			txtpnVersionFecha.setText("Version 1.0\t\tFecha: 05/06/2015");
-			txtpnVersionFecha.setBounds(10, 55, 369, 20);
+			txtpnVersionFecha.setBounds(41, 54, 369, 20);
 			contentPanel.add(txtpnVersionFecha);
 		}
 		{
 			JTextPane txtpnProyectoFinalDe = new JTextPane();
 			txtpnProyectoFinalDe.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
 			txtpnProyectoFinalDe.setForeground(new Color(0, 0, 128));
-			txtpnProyectoFinalDe.setText("Proyecto final de curso para la asignatura \"Programaci\u00F3n\" del ciclo superior \"Desarrollador de Aplicaciones Web\" del centro IES Gran Capit\u00E1n. Con este proyecto se pretende implementar todas las t\u00E9cnicas aprendidas durante el curso, incluyendo objetos, flujos, estructuras de datos, herencia, expresiones regulares, excepciones, interfaces, e interfaz gr\u00E1fica.\r\n");
+			txtpnProyectoFinalDe.setText("Proyecto final de curso para la asignatura \"Programaci\u00F3n\" del ciclo superior \"Desarrollador de Aplicaciones Web\" del centro IES Gran Capit\u00E1n.\r\n\r\nCon este proyecto se pretende implementar todas las t\u00E9cnicas aprendidas durante el curso, incluyendo objetos, flujos, estructuras de datos, herencia, expresiones regulares, excepciones, interfaces, e interfaz gr\u00E1fica.\r\n");
 			txtpnProyectoFinalDe.setBackground(SystemColor.control);
-			txtpnProyectoFinalDe.setBounds(10, 86, 414, 156);
+			txtpnProyectoFinalDe.setBounds(10, 86, 481, 169);
 			contentPanel.add(txtpnProyectoFinalDe);
 		}
 		{

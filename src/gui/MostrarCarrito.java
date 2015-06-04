@@ -26,6 +26,7 @@ public class MostrarCarrito extends VentanaPadre {
 	 * Crea el di&aacute;logo.
 	 */
 	public MostrarCarrito() {
+		comboBoxDisponible.setEnabled(false);
 		campoDiasRestantes.setEditable(false);
 		campoFechaAlquiler.setEditable(false);
 		campoPrecio.setEditable(false);
@@ -75,8 +76,9 @@ public class MostrarCarrito extends VentanaPadre {
 	 * M&eacute;todo que carga el primer producto del carrito del usuario seleccionado.
 	 */
 	protected void cargaInicial() {
-		buscarProducto(Tienda.usuarioSeleccionado.getCarrito().get(0));
-		finBotones();
+		//buscarProducto(Tienda.usuarioSeleccionado.getCarrito().get(0));
+		Tienda.productoEncontrado = Tienda.usuarioSeleccionado.getCarrito().get(0);
+		buscarYComprobarBotonera();
 	}
 
 	/**
@@ -168,8 +170,8 @@ public class MostrarCarrito extends VentanaPadre {
 		campoNumeroCanciones.setVisible(false);
 		etiqNumeroCanciones.setVisible(false);
 		etiqGenero.setVisible(false);
-		etiqEscuchasRestantes.setEnabled(false);
-		campoEscuchasRestantes.setEnabled(false);
+		etiqEscuchasRestantes.setVisible(false);
+		campoEscuchasRestantes.setVisible(false);
 		etiqFechaAlquiler.setVisible(false);
 		campoFechaAlquiler.setVisible(false);
 		etiqDiasRestantes.setVisible(false);
@@ -201,6 +203,7 @@ public class MostrarCarrito extends VentanaPadre {
 		campoNumeroCanciones.setVisible(false);
 		etiqDisponible.setVisible(true);
 		comboBoxDisponible.setVisible(true);
+		comboBoxDisponible.setEnabled(true);
 		etiqEscuchasRestantes.setVisible(false);
 		campoEscuchasRestantes.setVisible(false);
 	}
@@ -228,7 +231,7 @@ public class MostrarCarrito extends VentanaPadre {
 		campoAnno.setText(producto.getFechaLanzamiento());
 		campoEditorial.setText(producto.getDistribuidora());
 		campoNumeroCanciones.setText(((Disco)producto).getNumeroCanciones());
-		campoPrecio.setText(producto.getPrecio());
+		campoPrecio.setText(((Disco)producto).calcularPrecio());
 	}
 
 	/**
@@ -245,9 +248,10 @@ public class MostrarCarrito extends VentanaPadre {
 		campoAutor.setText(producto.getAutor());
 		campoAnno.setText(producto.getFechaLanzamiento());
 		campoEditorial.setText(producto.getDistribuidora());
-		campoPrecio.setText(((Libro) producto).getPrecio());
+		campoPrecio.setText(((Libro)producto).calcularPrecio());
 		comboBoxDisponible.addItem((((Libro) producto).isLibroEnPrestamo()));
 		comboBoxDisponible.setSelectedItem((((Libro) producto).isLibroEnPrestamo()));
+		//
 	}
 
 	/**
@@ -262,6 +266,6 @@ public class MostrarCarrito extends VentanaPadre {
 		campoAutor.setText(producto.getAutor());
 		campoAnno.setText(producto.getFechaLanzamiento());
 		campoEditorial.setText(producto.getDistribuidora());
-		campoPrecio.setText(producto.getPrecio());
+		campoPrecio.setText(((Merchandising)producto).calcularPrecio());
 	}
 }

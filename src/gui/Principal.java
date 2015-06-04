@@ -66,10 +66,6 @@ public class Principal {
 	 */	
 	private MostrarCatalogo mostrarCatalogo;
 	/**
-	 * Campo verAyuda.
-	 */
-	private VerAyuda verAyuda;
-	/**
 	 * Campo acercaDe.
 	 */
 	private AcercaDe acercaDe;
@@ -158,10 +154,6 @@ public class Principal {
 	 */
 	private JMenuItem menuAcercaDe;
 	/**
-	 * Campo menuVerAyuda.
-	 */
-	private JMenuItem menuVerAyuda;
-	/**
 	 * Campo menuMostrarCatalogo.
 	 */
 	private JMenuItem menuMostrarCatalogo;
@@ -182,9 +174,37 @@ public class Principal {
 	 */
 	private ElegirTitulo elegirTitulo;
 	/**
+	 * Campo mnVerAyuda.
+	 */
+	private JMenu mnVerAyuda;
+	/**
+	 * Campo ayudaMostrarCatalogo.
+	 */
+	private AyudaMostrarCatalogo ayudaMostrarCatalogo;
+	/**
+	 * Campo ayudaBuscar.
+	 */
+	private AyudaBuscar ayudaBuscar;
+	/**
+	 * Campo ayudaTienda.
+	 */
+	private AyudaTienda ayudaTienda;
+	/**
+	 * Campo ayudaGestion.
+	 */
+	private AyudaGestion ayudaGestion;
+	/**
 	 * Campo parentComponent.
 	 */
 	private static Component parentComponent;
+	/**
+	 * Campo mntmGeneral.
+	 */
+	private JMenuItem mntmGeneral;
+	/**
+	 * Campo ayudaGeneral.
+	 */
+	private AyudaGeneral ayudaGeneral;
 	
 	/**
 	 * Main de la aplicaci&oacute;n.
@@ -394,14 +414,55 @@ public class Principal {
 		ayuda.setMnemonic('H');
 		barraMenu.add(ayuda);
 		
-		menuVerAyuda = new JMenuItem("Ver Ayuda");
-		menuVerAyuda.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				verAyuda();
+		mnVerAyuda = new JMenu("Ver Ayuda");
+		mnVerAyuda.setMnemonic('V');
+		ayuda.add(mnVerAyuda);
+		
+		JMenuItem mntmGestin = new JMenuItem("Gesti\u00F3n");
+		mntmGestin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ayudaGestion();
 			}
 		});
-		menuVerAyuda.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, InputEvent.ALT_MASK));
-		ayuda.add(menuVerAyuda);
+		
+		mntmGeneral = new JMenuItem("General");
+		mntmGeneral.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_G, InputEvent.ALT_GRAPH_MASK));
+		mntmGeneral.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ayudaGeneral();
+			}
+		});
+		mnVerAyuda.add(mntmGeneral);
+		
+		mntmGestin.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_G, InputEvent.ALT_MASK));
+		mnVerAyuda.add(mntmGestin);
+		
+		JMenuItem mntmTienda = new JMenuItem("Tienda");
+		mntmTienda.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ayudaTienda();
+			}
+		});
+		mntmTienda.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.ALT_MASK));
+		mnVerAyuda.add(mntmTienda);
+		
+		JMenuItem mntmBuscar = new JMenuItem("Buscar");
+		mntmBuscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ayudaBuscar();
+			}
+		});
+		mntmBuscar.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_B, InputEvent.ALT_MASK));
+		mnVerAyuda.add(mntmBuscar);
+		
+		JMenuItem mntmMostrarCatlogo = new JMenuItem("Mostrar Cat\u00E1logo");
+		mntmMostrarCatlogo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ayudaMostrarCatalogo();
+			}
+		});
+		mntmMostrarCatlogo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, InputEvent.ALT_MASK));
+		mnVerAyuda.add(mntmMostrarCatlogo);
 		
 		menuAcercaDe = new JMenuItem("Acerca De");
 		menuAcercaDe.addActionListener(new ActionListener() {
@@ -566,11 +627,43 @@ public class Principal {
 	}
 	
 	/**
-	 * M&eacute;todo que abre la ventana para ver la ayuda del programa.
+	 * M&eacute;todo que abre la ventana para obtener ayuda general sobre la aplicaci&oacute;n Tienda Musical.
 	 */
-	protected void verAyuda() {
-		verAyuda = new VerAyuda();
-		verAyuda.setVisible(true);
+	protected void ayudaGeneral() {
+		ayudaGeneral = new AyudaGeneral();
+		ayudaGeneral.setVisible(true);
+	}
+	
+	/**
+	 * M&eacute;todo que abre la ventana para obtener ayuda sobre la visualizaci&oacute;n del cat&aacute;logo.
+	 */
+	protected void ayudaMostrarCatalogo() {
+		ayudaMostrarCatalogo = new AyudaMostrarCatalogo();
+		ayudaMostrarCatalogo.setVisible(true);
+	}
+
+	/**
+	 * M&eacute;todo que abre la ventana para obtener ayuda sobre la b&uacute;squeda de productos en el cat&aacute;logo.
+	 */
+	protected void ayudaBuscar() {
+		ayudaBuscar = new AyudaBuscar();
+		ayudaBuscar.setVisible(true);
+	}
+
+	/**
+	 * M&eacute;todo que abre la ventana para obtener ayuda sobre la gesti&oacute;n de la tienda.
+	 */
+	protected void ayudaTienda() {
+		ayudaTienda = new AyudaTienda();
+		ayudaTienda.setVisible(true);
+	}
+
+	/**
+	 * M&eacute;todo que abre la ventana para obtener ayuda sobre la gesti&oacute;n del cat&aacute;logo.
+	 */
+	protected void ayudaGestion() {
+		ayudaGestion = new AyudaGestion();
+		ayudaGestion.setVisible(true);
 	}
 	
 	/**

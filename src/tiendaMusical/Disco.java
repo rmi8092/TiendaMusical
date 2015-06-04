@@ -3,6 +3,8 @@
  */
 package tiendaMusical;
 
+import gui.Tienda;
+
 /**
  * Clase Disco
  */
@@ -188,12 +190,13 @@ public class Disco extends Producto implements esVendible {
 	 * M&eacute;todo sobrescrito desde interface para calcular el precio del disco en funci&oacute;n de si es cliente premium o no.
 	 */
 	@Override
-	public String calcularPrecio(String precio) {
-		if (Usuario.clientePremium == false) {
-			precio = getPrecio();
+	public String calcularPrecio() {
+		String precio = "";
+		if (Tienda.usuarioSeleccionado.isClientePremium()) {
+			precio = Double.toString((Double.parseDouble(getPrecio()) * 0.8));
 			return precio;
 		} else {
-			precio = Double.toString((Double.parseDouble(getPrecio()) * 0.8));
+			precio = getPrecio();
 			return precio;
 		}
 	}

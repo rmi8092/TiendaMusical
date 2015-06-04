@@ -37,7 +37,8 @@ public class Merchandising extends Producto implements esVendible{
 	 * M&eacute;todo sobrescrito de la interface esVendible para calcular el precio del merchandising en funci&oacute;n del tipo de cliente.
 	 */
 	@Override
-	public String calcularPrecio(String precio) {
+	public String calcularPrecio() {
+		String precio = "";
 		if (Usuario.clientePremium == false) {
 			precio = getPrecio();
 			return precio;

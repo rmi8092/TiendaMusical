@@ -4,6 +4,9 @@
 package gui;
 
 import java.awt.BorderLayout;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -11,9 +14,12 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.DefaultComboBoxModel;
+
 import tiendaMusical.Disponible;
 
 /**
@@ -158,6 +164,8 @@ public class VentanaPadre extends JDialog {
 	 * Campo elegirUsuarioAnnadirCarrito.
 	 */
 	protected ElegirUsuario elegirUsuarioAnnadirCarrito;
+	private JLabel imagenFondo;
+	private Image img;
 	/**
 	 * Campo campoDiasRestantes.
 	 */
@@ -305,6 +313,7 @@ public class VentanaPadre extends JDialog {
 		contenedor.add(campoEscuchasRestantes);
 		
 		comboBoxDisponible = new JComboBox();
+		comboBoxDisponible.setEnabled(false);
 		comboBoxDisponible.setModel(new DefaultComboBoxModel(Disponible.values()));
 		comboBoxDisponible.setBounds(94, 304, 55, 20);
 		contenedor.add(comboBoxDisponible);
@@ -330,5 +339,11 @@ public class VentanaPadre extends JDialog {
 		campoDiasRestantes.setColumns(10);
 		campoDiasRestantes.setBounds(487, 304, 37, 20);
 		contenedor.add(campoDiasRestantes);
+		
+		imagenFondo = new JLabel("");
+		img = new ImageIcon(this.getClass().getResource("/images/image2.png")).getImage();
+		imagenFondo.setIcon(new ImageIcon(img));
+		imagenFondo.setBounds(104, 69, 427, 320);
+		contenedor.add(imagenFondo);
 	}
 }

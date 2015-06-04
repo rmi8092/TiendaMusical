@@ -17,4 +17,9 @@ interface esAlquilable {
 	 * Declaraci&oacute;n del m&eacute;todo para activar la disponibilidad del libro.
 	 */
 	void libroDisponible();
+	
+	/**
+	 * Declaraci&oacute;n del m&eacute;todo para calcular el precio de los productos vendibles.
+	 */
+	String calcularPrecio();
 }

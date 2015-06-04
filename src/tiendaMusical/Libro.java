@@ -227,4 +227,19 @@ public class Libro extends Producto implements esAlquilable{
 		setDiasRestantesDevolucion(getDiasPrestamo());
 		setLibroEnPrestamo(Disponible.SI);
 	}
+
+	/**
+	 * M&eacute;todo sobrescrito desde interface para calcular el precio del libro en funci&oacute;n de si es cliente premium o no.
+	 */
+	@Override
+	public String calcularPrecio() {
+		String precio = "";
+		if (Usuario.clientePremium == false) {
+			precio = getPrecio();
+			return precio;
+		} else {
+			precio = Double.toString((Double.parseDouble(getPrecio()) * 0.8));
+			return precio;
+		}
+	}
 }

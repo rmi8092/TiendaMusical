@@ -84,20 +84,19 @@ public class MostrarTitulo extends VentanaPadre {
 	 * M&eacute;todo que restablece los valores de configuraci&oacute;n de la ventana.
 	 */
 	private void restablecerVentana() {
-		etiqGenero.setEnabled(true);
-		comboBoxGenero.setEnabled(true);
+		etiqGenero.setVisible(true);
+		comboBoxGenero.setVisible(true);
+		etiqDisponible.setEnabled(true);
 		comboBoxDisponible.setEnabled(true);
 		etiqNumeroCanciones.setEnabled(true);
-		etiqAnno.setEnabled(true);
-		campoAnno.setEnabled(true);
-		etiqNumeroCanciones.setEnabled(true);
 		campoNumeroCanciones.setEnabled(true);
-		etiqDisponible.setEnabled(true);
+		etiqAnno.setEnabled(true);
+		campoAnno.setText("");
+		etiqNumeroCanciones.setEnabled(true);
+		campoNumeroCanciones.setText("");
 		campoTitulo.setText("");
 		campoAutor.setText("");
-		campoAnno.setText("");
 		campoEditorial.setText("");
-		campoNumeroCanciones.setText("");
 		campoPrecio.setText("");
 	}
 	
@@ -105,28 +104,30 @@ public class MostrarTitulo extends VentanaPadre {
 	 * M&eacute;todo que configura la ventana si el producto es merchandising.
 	 */
 	private void ventanaMerchandising() {
-		comboBoxGenero.setEnabled(false);
-		etiqDisponible.setEnabled(false);
-		comboBoxDisponible.setEnabled(false);
-		campoNumeroCanciones.setEnabled(false);
-		etiqNumeroCanciones.setEnabled(false);
-		etiqGenero.setEnabled(false);
+		comboBoxGenero.setVisible(false);
+		etiqDisponible.setVisible(false);
+		comboBoxDisponible.setVisible(false);
+		campoNumeroCanciones.setVisible(false);
+		etiqNumeroCanciones.setVisible(false);
+		etiqGenero.setVisible(false);
 	}
 	
 	/**
 	 * M&eacute;todo que configura la ventana si el producto es disco.
 	 */
 	private void ventanaMusica() {
-		etiqDisponible.setEnabled(false);
-		comboBoxDisponible.setEnabled(false);
+		etiqDisponible.setVisible(false);
+		comboBoxDisponible.setVisible(false);
 	}
 	
 	/**
 	 * M&eacute;todo que configura la ventana si el producto es libro.
 	 */
 	private void ventanaLibros() {
-		etiqNumeroCanciones.setEnabled(false);
-		campoNumeroCanciones.setEnabled(false);
+		etiqDisponible.setVisible(false);
+		comboBoxDisponible.setVisible(false);
+		etiqNumeroCanciones.setVisible(true);
+		campoNumeroCanciones.setVisible(true);
 	}
 	
 	/**
