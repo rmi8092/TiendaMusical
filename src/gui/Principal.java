@@ -237,6 +237,7 @@ public class Principal {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 600, 400);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("Tienda Musical");
 		frame.getContentPane().setLayout(null);

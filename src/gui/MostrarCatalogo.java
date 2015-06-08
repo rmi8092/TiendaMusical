@@ -8,8 +8,11 @@ import tiendaMusical.Disco;
 import tiendaMusical.Libro;
 import tiendaMusical.Merchandising;
 import tiendaMusical.Producto;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import javax.swing.JFrame;
 
 /**
  * Clase MostrarCatalogo.

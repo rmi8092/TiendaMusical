@@ -73,6 +73,7 @@ public class ElegirUsuarioAnnadirCarrito extends ElegirUsuario {
 					}
 				}
 				else{
+					Tienda.usuarioSeleccionado = Tienda.cartera.getUsuarioStandard();
 					bloquearEscuchas();
 					setVisible(false);
 				}

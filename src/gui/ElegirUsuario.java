@@ -4,7 +4,9 @@
 package gui;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.FlowLayout;
+
 import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JDialog;

@@ -103,8 +103,8 @@ public class Usuario {
 	 * M&eacute;todo setter para asignar al usuario categor&iacute;a premium.
 	 * @param clientePremium Si el usuario es premium o no
 	 */
-	public static void setClientePremium(boolean clientePremium) {
-		clientePremium = clientePremium;
+	public void setClientePremium(boolean clientePremium) {
+		this.clientePremium = clientePremium;
 	}
 	
 	/**

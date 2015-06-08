@@ -184,32 +184,19 @@ public class AnnadirProducto extends VentanaPadre {
 		try {
 			switch ((Categoria) (comboBoxCateg.getSelectedItem())) {
 			case MUSICA:
-				Tienda.cartera.getCatalogo().annadir(
-						new Disco(campoTitulo.getText(), campoAutor.getText(),
-								(Categoria) comboBoxCateg.getSelectedItem(),
-								(Soporte) comboBoxSoporte.getSelectedItem(),
-								campoAnno.getText(), campoPrecio.getText(),
-								campoEditorial.getText(),
-								(Genero) comboBoxGenero.getSelectedItem(),
+				Tienda.cartera.getCatalogo().annadir(new Disco(campoTitulo.getText(), campoAutor.getText(),
+								(Categoria) comboBoxCateg.getSelectedItem(), (Soporte) comboBoxSoporte.getSelectedItem(),
+								campoAnno.getText(), campoPrecio.getText(), campoEditorial.getText(), (Genero) comboBoxGenero.getSelectedItem(),
 								campoNumeroCanciones.getText()));
 				break;
 			case LIBRO:
-				Tienda.cartera.getCatalogo().annadir(
-						new Libro(campoTitulo.getText(), campoAutor.getText(),
-								(Categoria) comboBoxCateg.getSelectedItem(),
-								(Soporte) comboBoxSoporte.getSelectedItem(),
-								campoAnno.getText(), campoPrecio.getText(), campoEditorial.getText(),
-								(Genero) comboBoxGenero.getSelectedItem(),
-								(Disponible) comboBoxDisponible
-										.getSelectedItem()));
+				Tienda.cartera.getCatalogo().annadir(new Libro(campoTitulo.getText(), campoAutor.getText(), (Categoria) comboBoxCateg.getSelectedItem(),
+								(Soporte) comboBoxSoporte.getSelectedItem(), campoAnno.getText(), campoPrecio.getText(), campoEditorial.getText(),
+								(Genero) comboBoxGenero.getSelectedItem(), (Disponible) comboBoxDisponible.getSelectedItem()));
 				break;
 			case MERCHANDISING:
-				Tienda.cartera.getCatalogo().annadir(
-						new Merchandising(campoTitulo.getText(), campoAutor
-								.getText(), (Categoria) comboBoxCateg
-								.getSelectedItem(), (Soporte) comboBoxSoporte
-								.getSelectedItem(), campoAnno.getText(),
-								campoPrecio.getText(),
+				Tienda.cartera.getCatalogo().annadir(new Merchandising(campoTitulo.getText(), campoAutor.getText(), (Categoria) comboBoxCateg
+								.getSelectedItem(), (Soporte) comboBoxSoporte.getSelectedItem(), campoAnno.getText(), campoPrecio.getText(),
 								campoEditorial.getText()));
 				break;
 			}
